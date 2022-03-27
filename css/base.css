@@ -1,0 +1,73 @@
+/* 
+1- TYPOGRAPHY
+- FONT-FAMILY: LATO
+
+- FONT-WEIGHT
+- Medium: 300/400
+
+
+-- LINE-HEIGHT:
+- Default : 1.8
+- HEADING ,PARAGRAPH : 1.8
+
+
+-- FONT-SIZE
+
+02--- COLOR
+- MAIN-TEXT: #777
+- BACKGROUND-COLOR: #000,#FFF
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8;
+  color: #777;
+}
+a {
+  /* lenh reset thẻ a, color : inherit thừa kế màu của thẻ cha
+    text-decoration: bỏ dấu gạch dưới chữ */
+  color: inherit;
+  text-decoration: none;
+}
+/* **************** */
+/* RESABLE STYLE CLASSES */
+/* **************** */
+.heading-primary {
+  color: #fff;
+  font-size: 24;
+  letter-spacing: 10px; /* khoảng cách giữa các chữ */
+  padding: 8px 24px;
+}
+
+.heading-secondary {
+  font-size: 24px;
+  font-weight: 400px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subheading {
+  text-align: center;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center; /*can giữa background */
+  background-attachment: fixed; /* khi cuộn background khi cuộn sẽ giữ nguyên*/
+}
+.container{
+    width: 950px;
+    margin: 64px auto;
+}
