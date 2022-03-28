@@ -4,7 +4,7 @@
 .header {
   display: flex;
   align-items: center;
-  background-color: #fff;
+  background-color: var(--color-white);
 
   width: 117rem;
   height: 9rem;
@@ -36,14 +36,14 @@
 }
 
 .nav-item--active {
-  color: #ff9f66;
+  color: var(--color-primary);
   position: relative;
 }
 
 .nav-item--active::after {
   content: "";
   display: block;
-  border-bottom: 1px solid #ff9f66;
+  border-bottom: 1px solid var(--color-primary);
   width: 30%;
 
   position: absolute;
@@ -65,10 +65,10 @@
 }
 
 .nav-account-link--outline {
-  color: #ff9f66;
-  background-color: #fff1e8;
+  color: var(--color-primary);
+  background-color: var(--color-white) 1e8;
   padding: 1.1rem 3rem;
-  border: 1px solid #ff9f66;
+  border: 1px solid var(--color-primary);
   border-radius: 0.6rem;
 }
 
@@ -77,8 +77,16 @@
 /* ************* */
 .hero {
   height: 107.5rem;
-
   position: relative;
+}
+
+.hero-wrapper {
+  width: 117rem;
+
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .hero-text-box {
@@ -93,11 +101,16 @@
   font-size: 1.8rem;
   line-height: calc(28 / 18);
   margin-bottom: 4.8rem;
+
+  animation: moveInRight 1.75s ease-in;
 }
 
 .hero-buttons {
   display: flex;
   gap: 2.3rem;
+
+  animation: moveInBottom 1.25s ease-in 1s;
+  animation-fill-mode: backwards;
 }
 
 .hero-shape-box {
@@ -109,7 +122,9 @@
 .hero-img-box {
   position: absolute;
   right: 0;
-  bottom: 13.5rem;
+  top: 19.6rem;
+
+  animation: FadeIn 1.5s ease-in;
 }
 
 /* ************* */
@@ -121,9 +136,9 @@
   height: 26rem;
 
   position: absolute;
-  margin-top: -26rem;
-
-  margin-bottom: 15rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .steps {
@@ -135,10 +150,11 @@
   top: -7.7rem;
   transform: translateX(-50%);
 
-  width: 117rem;}
+  width: 117rem;
+}
 
 .step {
-  background-color: #fff;
+  background-color: var(--color-white);
   padding: 2.6rem;
   box-shadow: 0px -1rem 2rem rgba(0, 0, 0, 0.05);
   border-radius: 0.6rem;
@@ -197,7 +213,7 @@
 
 .step-readmore {
   display: none;
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 1.4rem;
   font-weight: 600;
   line-height: calc(24 / 14);
@@ -211,8 +227,6 @@
   grid-template-columns: repeat(2, 1fr);
   justify-items: right;
   align-items: center;
-
-  margin-bottom: 30rem;
 }
 
 .achievements-text-box {
@@ -224,7 +238,7 @@
 }
 
 .achievement-number {
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 5rem;
   font-weight: 700;
   line-height: calc(60 / 50);
@@ -232,7 +246,7 @@
 }
 
 .achievement-title {
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 2rem;
   font-weight: 700;
   line-height: calc(30 / 20);
@@ -249,7 +263,7 @@
 }
 
 .achievements-title-name {
-  color: #ff9f66;
+  color: var(--color-primary);
   font-family: "Homemade Apple", cursive;
   font-size: 3.2rem;
   line-height: calc(69 / 32);
@@ -262,7 +276,7 @@
 }
 
 .achievements-title-profession--strong {
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 1.8rem;
   font-weight: 600;
   line-height: calc(22 / 18);
@@ -272,12 +286,11 @@
 /* FEATURE SECTION */
 /* ************* */
 .features {
-  margin-bottom: 15rem;
   padding-top: 15rem;
 }
 
 .features-wrapper {
-  background-color: #f5f6f9;
+  background-color: var(--color-background);
   height: 86.4rem;
   position: relative;
 }
@@ -308,7 +321,7 @@
 }
 
 .features-heading-line {
-  border-bottom: 1px solid #ff9f66;
+  border-bottom: 1px solid var(--color-primary);
   width: 7rem;
   margin-bottom: 2.2rem;
 }
@@ -326,10 +339,6 @@
 /* ************* */
 /* COURSES SECTION */
 /* ************* */
-.courses {
-  margin-bottom: 15rem;
-}
-
 .courses-box {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -349,10 +358,28 @@
   box-shadow: 0px 1.8rem 3.6rem rgba(0, 0, 0, 0.07);
   border-radius: 1.4rem;
   padding: 0 2.8rem 3.4rem 2.8rem;
+
+  /* transition: all 0.3s; */
+}
+
+.course:hover {
+  /* transform: translateY(-1rem); */
+}
+
+.course-img-box {
+  overflow: hidden;
+}
+
+.course-img {
+  transition: all 0.5s;
+}
+
+.course-img:hover {
+  transform: scale(1.1);
 }
 
 .course-title {
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 2rem;
   font-weight: 600;
   line-height: calc(30 / 20);
@@ -379,7 +406,7 @@
 
 .course-star-icon {
   font-size: 1.6rem;
-  color: #ff9f66;
+  color: var(--color-primary);
   /* height: 1.6rem;
   width: 1.6rem; */
 }
@@ -398,7 +425,7 @@
 }
 
 .course-button:hover {
-  color: #ff9f66;
+  color: var(--color-primary);
 }
 
 .courses-button-box {
@@ -409,18 +436,13 @@
 /* PRICING SECTION */
 /* ************* */
 .pricing {
-  background-color: #f5f6f9;
+  background-color: var(--color-background);
   padding: 15rem 0;
-  margin-bottom: 15rem;
 }
 
 /* ************* */
 /* TESTINOMIALS SECTION */
 /* ************* */
-.testimonials {
-  margin-bottom: 15rem;
-}
-
 .testimonials-wrapper {
   width: 73.8rem;
   margin: auto;
@@ -473,7 +495,7 @@
 }
 
 .testinomial-name {
-  color: #1c0a0a;
+  color: var(--color-text-dark);
   font-size: 1.6rem;
   font-weight: 600;
   line-height: calc(26 / 16);
@@ -506,7 +528,7 @@
   display: block;
   height: 62.5%;
   width: 62.5%;
-  background-color: #ff9f66;
+  background-color: var(--color-primary);
 
   border-radius: 50%;
 
@@ -528,7 +550,6 @@
 .newsletter {
   background-color: #258675;
   padding: 9.9rem 0;
-  margin-bottom: 15rem;
 }
 
 .newsletter-wrapper {
@@ -545,7 +566,7 @@
 }
 
 .newsletter-heading {
-  color: #fff;
+  color: var(--color-white);
   font-size: 2.6rem;
   font-weight: 700;
   line-height: calc(36 / 26);
@@ -581,7 +602,7 @@
   flex-grow: 1;
   background-color: transparent;
   border: none;
-  color: #fff;
+  color: var(--color-white);
 }
 
 .newsletter-form-input::placeholder {
@@ -611,7 +632,7 @@
 
 .cta-box {
   padding: 18.4rem 0 18.4rem 4.8rem;
-  background-color: #f5f6f9;
+  background-color: var(--color-background);
 
   clip-path: polygon(0 0, 80% 25%, 100% 100%, 0% 100%);
 
@@ -631,7 +652,7 @@
 .cta-form-box {
   width: 56.4rem;
   padding: 4rem 4.5rem;
-  background-color: #fff;
+  background-color: var(--color-white);
   box-shadow: 0 8rem 10.5rem rgba(51, 51, 51, 0.1);
   border-radius: 2rem;
 
